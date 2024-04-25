@@ -1,0 +1,10 @@
+import java.util.Arrays;
+public class Solution {
+    public static int sumOfMaxMin(int[] arr, int n) {
+
+        // Sort the array.
+        Arrays.sort(arr);
+
+        return arr[n - 1] + arr[0];
+    }
+}
