@@ -1,0 +1,32 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    public static int findSecondLargest(int n, int[] arr) {
+        if (n < 2) {
+            return -1; // Return -1 for arrays with fewer than 2 elements
+        }
+
+        // Find the largest element in the array
+        int largest = Integer.MIN_VALUE;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] > largest) {
+                largest = arr[i];
+            }
+        }
+
+        // Find the second largest element in the array
+        int secondLargest = Integer.MIN_VALUE;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] != largest && arr[i] > secondLargest) {
+                secondLargest = arr[i];
+            }
+        }
+
+        // Check if a second largest element was found
+        if (secondLargest == Integer.MIN_VALUE) {
+            return -1; // Return -1 if there is no second largest element
+        }
+
+        return secondLargest;
+    }
+}
